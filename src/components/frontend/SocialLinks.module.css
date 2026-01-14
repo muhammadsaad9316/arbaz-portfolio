@@ -1,0 +1,198 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    perspective: 1000px;
+}
+
+.layer {
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.layer span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: transparent;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base state for the icon content (svg) */
+.layer span:last-child {
+    background: transparent;
+    z-index: 5;
+}
+
+.svgIcon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+/* Hover Effects */
+
+/* Rotate the whole layer stack */
+.icon:hover .layer {
+    transform: rotate(-35deg) skew(20deg);
+}
+
+/* Styling for the layers (spans 1-4) */
+.layer span {
+    border: 1px solid var(--hover-color);
+}
+
+.icon:hover .layer span {
+    box-shadow: -1px 1px 3px var(--hover-color);
+}
+
+/* Stacking logic */
+.icon:hover .layer span:nth-child(1) {
+    opacity: 0.2;
+}
+
+.icon:hover .layer span:nth-child(2) {
+    opacity: 0.4;
+    transform: translate(5px, -5px);
+}
+
+.icon:hover .layer span:nth-child(3) {
+    opacity: 0.6;
+    transform: translate(10px, -10px);
+}
+
+.icon:hover .layer span:nth-child(4) {
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+}
+
+.icon:hover .layer span:nth-child(5) {
+    opacity: 1;
+    transform: translate(20px, -20px);
+    background: var(--hover-bg, #111);
+    /* Fallback or specific bg if needed */
+    /* Ensure the top layer has a solid background to hide layers below if wanted, 
+     but request asked for "border" style primarily. 
+     Let's keep it transparent with border as per prompt "border: 1px solid var(--hover-color)" 
+     Actually, usually 3D stacks need solid bg to look like blocks. 
+     The prompt says "border: 1px solid var(--hover-color)". I will stick to that.
+  */
+    background: #121212;
+    /* Match theme bg to avoid see-through mess */
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    /* Above the icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.icon:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-30px);
+    /* Move up on hover */
+}
+
+.platformName {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile optimization - disable 3D effects on touch devices for performance */
+@media (hover: none) {
+    .icon:hover .layer {
+        transform: none;
+    }
+
+    .icon:hover .layer span:nth-child(1),
+    .icon:hover .layer span:nth-child(2),
+    .icon:hover .layer span:nth-child(3),
+    .icon:hover .layer span:nth-child(4) {
+        opacity: 0;
+        transform: none;
+    }
+
+    .icon:hover .layer span:nth-child(5) {
+        transform: scale(1.1);
+        box-shadow: 0 0 12px var(--hover-color);
+    }
+
+    .icon:active .layer span:nth-child(5) {
+        transform: scale(0.95);
+    }
+
+    .tooltip {
+        display: none;
+    }
+}
+
+/* Reduce gap on mobile */
+@media (max-width: 480px) {
+    .wrapper {
+        gap: 1.25rem;
+    }
+
+    .icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .svgIcon {
+        width: 20px;
+        height: 20px;
+    }
+}
