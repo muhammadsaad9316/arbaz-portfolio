@@ -1,4 +1,6 @@
 import ScrollyCanvas from "@/components/frontend/ScrollyCanvas";
+
+export const dynamic = "force-dynamic";
 import Projects from "@/components/frontend/Projects";
 import Header from "@/components/frontend/Header";
 import About from "@/components/frontend/About";
