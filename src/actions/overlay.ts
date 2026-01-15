@@ -44,55 +44,49 @@ export async function updateOverlayContent(content: OverlayContent) {
         result = await prisma.overlayContent.update({
             where: { id: existing.id },
             data: {
-                introTitle1: content.intro.titleLine1,
-                introTitle2: content.intro.titleLine2,
-                introRole: content.intro.role,
+                introTitle1: content.introTitle1,
+                introTitle2: content.introTitle2,
+                introRole: content.introRole,
 
-                craftPrefix: content.craft.textPrefix,
-                craftHighlight: content.craft.highlight,
-                craftSuffix: content.craft.textSuffix,
+                craftPrefix: content.craftPrefix,
+                craftHighlight: content.craftHighlight,
+                craftSuffix: content.craftSuffix,
 
-                visionPrefix: content.vision.textPrefix,
-                visionHighlight: content.vision.highlight,
-                visionSuffix: content.vision.textSuffix,
+                visionPrefix: content.visionPrefix,
+                visionHighlight: content.visionHighlight,
+                visionSuffix: content.visionSuffix,
             }
         });
     } else {
         result = await prisma.overlayContent.create({
             data: {
-                introTitle1: content.intro.titleLine1,
-                introTitle2: content.intro.titleLine2,
-                introRole: content.intro.role,
+                introTitle1: content.introTitle1,
+                introTitle2: content.introTitle2,
+                introRole: content.introRole,
 
-                craftPrefix: content.craft.textPrefix,
-                craftHighlight: content.craft.highlight,
-                craftSuffix: content.craft.textSuffix,
+                craftPrefix: content.craftPrefix,
+                craftHighlight: content.craftHighlight,
+                craftSuffix: content.craftSuffix,
 
-                visionPrefix: content.vision.textPrefix,
-                visionHighlight: content.vision.highlight,
-                visionSuffix: content.vision.textSuffix,
+                visionPrefix: content.visionPrefix,
+                visionHighlight: content.visionHighlight,
+                visionSuffix: content.visionSuffix,
             }
         });
     }
 
     revalidatePath('/');
 
-    // Map back to the structured object expected by the frontend
+    // Return flat structure
     return {
-        intro: {
-            titleLine1: result.introTitle1,
-            titleLine2: result.introTitle2,
-            role: result.introRole
-        },
-        craft: {
-            textPrefix: result.craftPrefix,
-            highlight: result.craftHighlight,
-            textSuffix: result.craftSuffix
-        },
-        vision: {
-            textPrefix: result.visionPrefix,
-            highlight: result.visionHighlight,
-            textSuffix: result.visionSuffix
-        }
+        introTitle1: result.introTitle1,
+        introTitle2: result.introTitle2,
+        introRole: result.introRole,
+        craftPrefix: result.craftPrefix,
+        craftHighlight: result.craftHighlight,
+        craftSuffix: result.craftSuffix,
+        visionPrefix: result.visionPrefix,
+        visionHighlight: result.visionHighlight,
+        visionSuffix: result.visionSuffix,
     };
 }
