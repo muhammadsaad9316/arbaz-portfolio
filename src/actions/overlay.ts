@@ -9,28 +9,28 @@ export async function getOverlayContent(): Promise<OverlayContent> {
 
     if (!result) {
         return {
-            intro: { titleLine1: '', titleLine2: '', role: '' },
-            craft: { textPrefix: '', highlight: '', textSuffix: '' },
-            vision: { textPrefix: '', highlight: '', textSuffix: '' },
+            introTitle1: 'Hello',
+            introTitle2: 'World',
+            introRole: 'Developer',
+            craftPrefix: 'I craft',
+            craftHighlight: 'digital experiences',
+            craftSuffix: 'that inspire',
+            visionPrefix: 'Building',
+            visionHighlight: 'tomorrow',
+            visionSuffix: 'today',
         };
     }
 
     return {
-        intro: {
-            titleLine1: result.introTitle1,
-            titleLine2: result.introTitle2,
-            role: result.introRole
-        },
-        craft: {
-            textPrefix: result.craftPrefix,
-            highlight: result.craftHighlight,
-            textSuffix: result.craftSuffix
-        },
-        vision: {
-            textPrefix: result.visionPrefix,
-            highlight: result.visionHighlight,
-            textSuffix: result.visionSuffix
-        }
+        introTitle1: result.introTitle1,
+        introTitle2: result.introTitle2,
+        introRole: result.introRole,
+        craftPrefix: result.craftPrefix,
+        craftHighlight: result.craftHighlight,
+        craftSuffix: result.craftSuffix,
+        visionPrefix: result.visionPrefix,
+        visionHighlight: result.visionHighlight,
+        visionSuffix: result.visionSuffix,
     };
 }
 
