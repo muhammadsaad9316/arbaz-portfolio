@@ -93,20 +93,10 @@ export async function updateOverlayContent(content: OverlayContent) {
 
         revalidatePath('/');
 
-        // Return flat structure
-        return {
-            introTitle1: result.introTitle1,
-            introTitle2: result.introTitle2,
-            introRole: result.introRole,
-            craftPrefix: result.craftPrefix,
-            craftHighlight: result.craftHighlight,
-            craftSuffix: result.craftSuffix,
-            visionPrefix: result.visionPrefix,
-            visionHighlight: result.visionHighlight,
-            visionSuffix: result.visionSuffix,
-        };
+        // Return success
+        return { success: true };
     } catch (error) {
         console.error('Error updating overlay content:', error);
-        throw new Error('Failed to update overlay content');
+        return { success: false, error: 'Failed to update overlay content' };
     }
 }

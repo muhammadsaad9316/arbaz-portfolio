@@ -17,10 +17,14 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
         setSaving(true);
 
         try {
-            await updateOverlayContent(formData);
-            alert('Overlay content updated successfully!');
-            router.push('/admin');
-            router.refresh();
+            const result = await updateOverlayContent(formData);
+            if (result.success) {
+                alert('Overlay content updated successfully!');
+                router.push('/admin');
+                router.refresh();
+            } else {
+                alert(result.error || 'Error updating overlay content');
+            }
         } catch (error: any) {
             alert(error.message || 'Error updating overlay content');
         } finally {
