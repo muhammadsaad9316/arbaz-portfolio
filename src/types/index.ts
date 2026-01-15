@@ -16,19 +16,13 @@ export interface Project extends ProjectInput {
 }
 
 export interface OverlayContent {
-    intro: {
-        titleLine1: string;
-        titleLine2: string;
-        role: string;
-    };
-    craft: {
-        textPrefix: string;
-        highlight: string;
-        textSuffix: string;
-    };
-    vision: {
-        textPrefix: string;
-        highlight: string;
-        textSuffix: string;
-    };
+    introTitle1: string;
+    introTitle2: string;
+    introRole: string;
+    craftPrefix: string;
+    craftHighlight: string;
+    craftSuffix: string;
+    visionPrefix: string;
+    visionHighlight: string;
+    visionSuffix: string;
 }
