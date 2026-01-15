@@ -39,11 +39,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <input
                             type="text"
                             required
-                            value={formData.intro.titleLine1}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                intro: { ...formData.intro, titleLine1: e.target.value }
-                            })}
+                            value={formData.introTitle1}
+                            onChange={(e) => setFormData({ ...formData, introTitle1: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
@@ -52,11 +49,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <input
                             type="text"
                             required
-                            value={formData.intro.titleLine2}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                intro: { ...formData.intro, titleLine2: e.target.value }
-                            })}
+                            value={formData.introTitle2}
+                            onChange={(e) => setFormData({ ...formData, introTitle2: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
@@ -65,11 +59,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <input
                             type="text"
                             required
-                            value={formData.intro.role}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                intro: { ...formData.intro, role: e.target.value }
-                            })}
+                            value={formData.introRole}
+                            onChange={(e) => setFormData({ ...formData, introRole: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
@@ -84,11 +75,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <label className="block text-sm font-medium mb-2">Prefix</label>
                         <input
                             type="text"
-                            value={formData.craft.textPrefix}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                craft: { ...formData.craft, textPrefix: e.target.value }
-                            })}
+                            value={formData.craftPrefix}
+                            onChange={(e) => setFormData({ ...formData, craftPrefix: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
@@ -96,11 +84,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <label className="block text-sm font-medium mb-2">Highlight</label>
                         <input
                             type="text"
-                            value={formData.craft.highlight}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                craft: { ...formData.craft, highlight: e.target.value }
-                            })}
+                            value={formData.craftHighlight}
+                            onChange={(e) => setFormData({ ...formData, craftHighlight: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
@@ -108,11 +93,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <label className="block text-sm font-medium mb-2">Suffix</label>
                         <input
                             type="text"
-                            value={formData.craft.textSuffix}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                craft: { ...formData.craft, textSuffix: e.target.value }
-                            })}
+                            value={formData.craftSuffix}
+                            onChange={(e) => setFormData({ ...formData, craftSuffix: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
@@ -127,11 +109,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <label className="block text-sm font-medium mb-2">Prefix</label>
                         <input
                             type="text"
-                            value={formData.vision.textPrefix}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                vision: { ...formData.vision, textPrefix: e.target.value }
-                            })}
+                            value={formData.visionPrefix}
+                            onChange={(e) => setFormData({ ...formData, visionPrefix: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
@@ -139,11 +118,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <label className="block text-sm font-medium mb-2">Highlight</label>
                         <input
                             type="text"
-                            value={formData.vision.highlight}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                vision: { ...formData.vision, highlight: e.target.value }
-                            })}
+                            value={formData.visionHighlight}
+                            onChange={(e) => setFormData({ ...formData, visionHighlight: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
@@ -151,11 +127,8 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                         <label className="block text-sm font-medium mb-2">Suffix</label>
                         <input
                             type="text"
-                            value={formData.vision.textSuffix}
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                vision: { ...formData.vision, textSuffix: e.target.value }
-                            })}
+                            value={formData.visionSuffix}
+                            onChange={(e) => setFormData({ ...formData, visionSuffix: e.target.value })}
                             className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
                         />
                     </div>
