@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Project {
@@ -19,38 +20,32 @@ model Project {
 }
 
 model OverlayContent {
-  id            Int      @id @default(autoincrement())
-  // Intro Section
-  introTitle1   String
-  introTitle2   String
-  introRole     String
-  
-  // Craft Section
-  craftPrefix   String
-  craftHighlight String
-  craftSuffix   String
-  
-  // Vision Section
-  visionPrefix  String
+  id              Int      @id @default(autoincrement())
+  introTitle1     String
+  introTitle2     String
+  introRole       String
+  craftPrefix     String
+  craftHighlight  String
+  craftSuffix     String
+  visionPrefix    String
   visionHighlight String
-  visionSuffix  String
-
-  updatedAt     DateTime @updatedAt
+  visionSuffix    String
+  updatedAt       DateTime @updatedAt
 }
 
 model About {
   id        Int      @id @default(autoincrement())
   heading   String
   text      String
-  stats     Json     // Array of { label, value }
+  stats     Json
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Skill {
   id        Int      @id @default(autoincrement())
-  category  String   // Frontend, Backend, Design
-  items     String[] // Array of strings
+  category  String
+  items     String[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -70,7 +65,7 @@ model Contact {
   heading   String
   text      String
   email     String
-  socials   Json     // Array of { name, url, icon }
+  socials   Json
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
