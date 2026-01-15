@@ -95,8 +95,8 @@ export async function updateOverlayContent(content: OverlayContent) {
 
         // Return success
         return { success: true };
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error updating overlay content:', error);
-        return { success: false, error: 'Failed to update overlay content' };
+        return { success: false, error: `Failed to update: ${error.message}` };
     }
 }
