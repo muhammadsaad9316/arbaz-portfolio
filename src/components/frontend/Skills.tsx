@@ -20,7 +20,7 @@ export default function Skills({ data }: SkillsProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-6xl font-bold text-white mb-20"
+                    className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-500 mb-20"
                 >
                     Expertise
                 </motion.h2>
@@ -33,7 +33,7 @@ export default function Skills({ data }: SkillsProps) {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300"
+                            className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300"
                         >
                             <h3 className="text-2xl font-bold text-white mb-6">
                                 {category.category}
@@ -42,7 +42,7 @@ export default function Skills({ data }: SkillsProps) {
                                 {category.items.map((item) => (
                                     <span
                                         key={item}
-                                        className="px-4 py-2 bg-white/5 rounded-full text-sm text-white/80 border border-white/5 hover:border-white/20 transition-colors"
+                                        className="px-4 py-2 bg-white/5 rounded-full text-sm text-white/80 border border-white/5 hover:border-pink-500/50 hover:text-white transition-colors"
                                     >
                                         {item}
                                     </span>

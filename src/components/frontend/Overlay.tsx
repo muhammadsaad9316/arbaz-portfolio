@@ -57,7 +57,7 @@ export default function Overlay({ scrollYProgress, content }: OverlayProps) {
                 className="absolute inset-0 flex flex-col items-start justify-center px-6 sm:px-10 md:px-32 max-w-4xl"
             >
                 <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg">
-                    {content.craftPrefix} <span className="text-blue-500">{content.craftHighlight}</span><br />
+                    {content.craftPrefix} <span className="text-orange-500">{content.craftHighlight}</span><br />
                     {content.craftSuffix}
                 </h2>
             </motion.div>
@@ -70,7 +70,7 @@ export default function Overlay({ scrollYProgress, content }: OverlayProps) {
                 <div className="text-right max-w-4xl">
                     <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg">
                         {content.visionPrefix}<br />
-                        <span className="text-purple-500">{content.visionHighlight}</span> {content.visionSuffix}
+                        <span className="text-pink-500">{content.visionHighlight}</span> {content.visionSuffix}
                     </h2>
                 </div>
             </motion.div>

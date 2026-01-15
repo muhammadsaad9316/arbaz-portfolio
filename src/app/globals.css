@@ -3,6 +3,14 @@
 :root {
   --background: #121212;
   --foreground: #ededed;
+  
+  /* Hero-matched accent palette */
+  --accent-warm: #F97316;      /* Orange */
+  --accent-warm-glow: #EA580C; /* Orange-600 */
+  --accent-cool: #6366F1;      /* Indigo */
+  --accent-mid: #EC4899;       /* Pink */
+  --accent-gradient-from: #F97316;
+  --accent-gradient-to: #6366F1;
 }
 
 @theme inline {

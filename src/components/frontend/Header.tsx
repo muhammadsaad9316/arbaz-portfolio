@@ -73,7 +73,7 @@ export default function Header() {
             <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
                 <a
                     href="#"
-                    className="text-2xl font-bold text-white tracking-tighter"
+                    className="text-2xl font-bold text-white tracking-tighter hover:text-orange-500 transition-colors"
                     onClick={(e) => scrollToSection(e, '#')}
                 >
                     ARBAZ
@@ -86,7 +86,7 @@ export default function Header() {
                             key={link.name}
                             href={link.href}
                             onClick={(e) => scrollToSection(e, link.href)}
-                            className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+                            className="text-sm font-medium text-white/70 hover:text-orange-500 transition-colors"
                         >
                             {link.name}
                         </a>
@@ -143,7 +143,7 @@ export default function Header() {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="text-lg font-medium text-white/80 hover:text-white transition-colors py-2"
+                                    className="text-lg font-medium text-white/80 hover:text-orange-500 transition-colors py-2"
                                 >
                                     {link.name}
                                 </motion.a>

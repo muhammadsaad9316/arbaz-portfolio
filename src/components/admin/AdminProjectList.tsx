@@ -36,7 +36,7 @@ export default function AdminProjectList({ initialProjects }: { initialProjects:
 
                     <div className="flex gap-2 ml-4">
                         <Link href={`/admin/projects/${project.id}/edit`}>
-                            <button className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+                            <button className="bg-orange-500 px-4 py-2 rounded hover:bg-orange-600 transition-colors">
                                 Edit
                             </button>
                         </Link>

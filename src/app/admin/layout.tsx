@@ -11,7 +11,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
                             ← Back to Site
                         </Link>
                         <span className="text-white/20">|</span>
-                        <Link href="/admin" className="font-bold text-xl hover:text-purple-400 transition-colors">
+                        <Link href="/admin" className="font-bold text-xl hover:text-orange-500 transition-colors">
                             Admin Dashboard
                         </Link>
                     </div>

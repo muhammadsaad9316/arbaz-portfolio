@@ -15,7 +15,7 @@ export default function ProjectsClient({ items }: ProjectsClientProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-6xl font-bold text-white mb-20 text-center"
+                className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-500 mb-20 text-center"
             >
                 Selected Works
             </motion.h2>

@@ -63,12 +63,12 @@ export default function Expertise({ data }: ExpertiseProps) {
     );
 
     return (
-        <section ref={container} className="bg-[#0a0a0a] text-white py-24 px-6 md:px-12">
+        <section ref={container} className="bg-[#121212] text-white py-24 px-6 md:px-12">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 {/* Left Column - Sticky */}
                 <div className="lg:sticky lg:top-32 self-start mb-12 lg:mb-0">
                     <div className="overflow-hidden mb-6">
-                        <h2 className="reveal-text text-5xl md:text-7xl font-bold font-sans tracking-tight block">
+                        <h2 className="reveal-text text-5xl md:text-7xl font-bold font-sans tracking-tight block bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-500">
                             Expertise
                         </h2>
                     </div>

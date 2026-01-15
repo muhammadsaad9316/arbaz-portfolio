@@ -17,7 +17,7 @@ interface ProjectFormProps {
 }
 
 export default function ProjectForm({
-    initialData = { title: '', category: '', description: '', color: 'from-pink-500 to-violet-500', imageUrl: '' },
+    initialData = { title: '', category: '', description: '', color: 'from-orange-500 to-pink-500', imageUrl: '' },
     onSubmit,
     submitLabel,
     isSubmitting = false
@@ -38,7 +38,7 @@ export default function ProjectForm({
                     required
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                    className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                     placeholder="e.g., Neon Horizon"
                 />
             </div>
@@ -50,7 +50,7 @@ export default function ProjectForm({
                     required
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                    className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                     placeholder="e.g., WebGL Experience"
                 />
             </div>
@@ -61,7 +61,7 @@ export default function ProjectForm({
                     required
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                    className="w-full p-3 rounded bg-white/10 border border-white/20 h-32 focus:outline-none focus:border-blue-500"
+                    className="w-full p-3 rounded bg-white/10 border border-white/20 h-32 focus:outline-none focus:border-orange-500"
                     placeholder="Describe your project..."
                 />
             </div>
@@ -72,7 +72,7 @@ export default function ProjectForm({
                     type="url"
                     value={(formData as any).imageUrl || ''}
                     onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value } as any)}
-                    className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                    className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                     placeholder="https://example.com/image.jpg"
                 />
                 {(formData as any).imageUrl && (
@@ -92,14 +92,13 @@ export default function ProjectForm({
                 <select
                     value={formData.color}
                     onChange={(e) => setFormData({ ...formData, color: e.target.value })}
-                    className="w-full p-3 rounded bg-white/10 border border-white/20 bg-[#1a1a1a] focus:outline-none focus:border-blue-500"
+                    className="w-full p-3 rounded bg-white/10 border border-white/20 bg-[#1a1a1a] focus:outline-none focus:border-orange-500"
                 >
-                    <option value="from-pink-500 to-violet-500">Pink to Violet</option>
-                    <option value="from-cyan-500 to-blue-500">Cyan to Blue</option>
-                    <option value="from-amber-500 to-orange-500">Amber to Orange</option>
+                    <option value="from-orange-500 to-amber-500">Orange to Amber</option>
+                    <option value="from-pink-500 to-rose-500">Pink to Rose</option>
+                    <option value="from-indigo-500 to-blue-500">Indigo to Blue</option>
+                    <option value="from-orange-500 to-pink-500">Orange to Pink (Hero Gradient)</option>
                     <option value="from-emerald-500 to-teal-500">Emerald to Teal</option>
-                    <option value="from-red-500 to-pink-500">Red to Pink</option>
-                    <option value="from-purple-500 to-pink-500">Purple to Pink</option>
                 </select>
                 <div className={`mt-2 h-20 rounded bg-gradient-to-r ${formData.color}`} />
             </div>

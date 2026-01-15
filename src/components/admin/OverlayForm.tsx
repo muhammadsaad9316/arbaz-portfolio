@@ -45,7 +45,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             required
                             value={formData.introTitle1}
                             onChange={(e) => setFormData({ ...formData, introTitle1: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                     <div>
@@ -55,7 +55,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             required
                             value={formData.introTitle2}
                             onChange={(e) => setFormData({ ...formData, introTitle2: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                     <div>
@@ -65,7 +65,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             required
                             value={formData.introRole}
                             onChange={(e) => setFormData({ ...formData, introRole: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                 </div>
@@ -81,7 +81,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             type="text"
                             value={formData.craftPrefix}
                             onChange={(e) => setFormData({ ...formData, craftPrefix: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                     <div>
@@ -90,7 +90,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             type="text"
                             value={formData.craftHighlight}
                             onChange={(e) => setFormData({ ...formData, craftHighlight: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                     <div>
@@ -99,7 +99,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             type="text"
                             value={formData.craftSuffix}
                             onChange={(e) => setFormData({ ...formData, craftSuffix: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                 </div>
@@ -115,7 +115,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             type="text"
                             value={formData.visionPrefix}
                             onChange={(e) => setFormData({ ...formData, visionPrefix: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                     <div>
@@ -124,7 +124,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             type="text"
                             value={formData.visionHighlight}
                             onChange={(e) => setFormData({ ...formData, visionHighlight: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                     <div>
@@ -133,7 +133,7 @@ export default function OverlayForm({ initialContent }: { initialContent: Overla
                             type="text"
                             value={formData.visionSuffix}
                             onChange={(e) => setFormData({ ...formData, visionSuffix: e.target.value })}
-                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-blue-500"
+                            className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-orange-500"
                         />
                     </div>
                 </div>

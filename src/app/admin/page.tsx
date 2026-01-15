@@ -13,7 +13,7 @@ export default async function AdminDashboard() {
                 <h1 className="text-4xl font-bold">Admin Dashboard</h1>
                 <div className="flex gap-3">
                     <Link href="/admin/overlay">
-                        <button className="bg-purple-500 px-6 py-2 rounded hover:bg-purple-600 font-medium transition-colors">
+                        <button className="bg-orange-500 px-6 py-2 rounded hover:bg-orange-600 font-medium transition-colors">
                             Edit Hero Section
                         </button>
                     </Link>

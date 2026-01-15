@@ -14,7 +14,7 @@ interface AboutProps {
     } | null;
 }
 
-const ScrollRevealText = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => {
+const ScrollRevealText = ({ children, className = '', gradient }: { children: React.ReactNode; className?: string; gradient?: string }) => {
     const elementRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
@@ -27,57 +27,22 @@ const ScrollRevealText = ({ children, className = '' }: { children: React.ReactN
             const rect = element.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            // Start point: Element enters from bottom (rect.top = windowHeight)
-            // End point: Element reaches vertical center (rect.top + rect.height/2 = windowHeight/2)
-
             const elementCenter = rect.top + rect.height / 2;
-            const startPoint = windowHeight; // When top is at bottom
-            const endPoint = windowHeight / 2; // When center is at center - actually user said "when it reaches the vertical center"
-
-            // Adjust to users spec: 
-            // 0% when enters bottom
-            // 100% when reaches vertical center
-
-            // Let's map rect.top.
-            // When rect.top == windowHeight (just entering), progress should be 0.
-            // When rect.top + height/2 == windowHeight/2 (center aligned), progress should be 100.
-
-            // However, strictly adhering to "0% when enters bottom" means rect.top = windowHeight. 
-            // But usually we want the text to be visible *before* it leaves the screen? No, reveals as it enters.
-
-            // Range calculation
-            // Distance to travel from bottom to center
-            const travelDist = startPoint - endPoint;
-
-            // Current progress
-            // We want 0 at startPoint, 1 at endPoint.
-            // rect.top decreases as we scroll down (element moves up).
-
-            // Let's use a simplified approach based on top position
-            // Trigger 0% at windowHeight
-            // Trigger 100% at windowHeight / 2
-
+            const startPoint = windowHeight;
             const currentPos = rect.top;
-
-            // formula: progress = (start - current)/(start - end)
-            // if current = start (windowHeight), progress = 0
-            // if current = end (windowHeight/2), progress = 1
 
             let percentage = (windowHeight - currentPos) / (windowHeight / 2);
 
-            // Clamp value
             percentage = Math.max(0, Math.min(1, percentage));
 
             element.style.backgroundSize = `${percentage * 100}% 100%`;
         };
 
         const onScroll = () => {
-            // Use requestAnimationFrame for performance
             rafId = requestAnimationFrame(handleScroll);
         };
 
         window.addEventListener('scroll', onScroll);
-        // Initial call to set state correctly on load
         handleScroll();
 
         return () => {
@@ -92,11 +57,11 @@ const ScrollRevealText = ({ children, className = '' }: { children: React.ReactN
             className={`${className} bg-no-repeat`}
             style={{
                 color: 'rgba(255, 255, 255, 0.2)',
-                backgroundImage: 'linear-gradient(#fff, #fff)',
+                backgroundImage: gradient || 'linear-gradient(#fff, #fff)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 backgroundSize: '0% 100%',
-                display: 'inline', // Ensure bg size applies correctly to text flow
+                display: 'inline',
             }}
         >
             {children}
@@ -120,7 +85,7 @@ export default function About({ data }: AboutProps) {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-4xl md:text-6xl font-bold bg-clip-text mb-8 leading-tight">
-                            <ScrollRevealText>
+                            <ScrollRevealText gradient="linear-gradient(to right, #F97316, #EC4899)">
                                 {data.heading}
                             </ScrollRevealText>
                         </h2>
@@ -159,7 +124,7 @@ export default function About({ data }: AboutProps) {
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             {/* Overlay for aesthetic tint */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-indigo-500/20 pointer-events-none" />
                         </div>
                     </motion.div>
                 </div>

@@ -66,7 +66,7 @@ export default function Contact({ data }: ContactProps) {
                                 href={`mailto:${data.email}`}
                                 className="relative group inline-block"
                             >
-                                <div className="absolute -inset-2 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full blur-md opacity-25 group-hover:opacity-60 transition duration-500 will-change-transform" />
+                                <div className="absolute -inset-2 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full blur-md opacity-25 group-hover:opacity-60 transition duration-500 will-change-transform" />
                                 <button className="relative px-8 sm:px-10 py-4 sm:py-5 bg-[#121212] border border-white/10 rounded-full leading-none flex items-center gap-4 group-hover:bg-white group-hover:text-black transition-all duration-300 min-h-[48px]">
                                     <span className="text-lg sm:text-xl font-medium tracking-widest uppercase">Say Hello</span>
                                 </button>
