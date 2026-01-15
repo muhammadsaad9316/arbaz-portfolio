@@ -5,9 +5,14 @@ import { ProjectSchema, ProjectInput } from '@/types';
 import { prisma } from '@/lib/prisma';
 
 export async function getProjects() {
-    return await prisma.project.findMany({
-        orderBy: { id: 'asc' }
-    });
+    try {
+        return await prisma.project.findMany({
+            orderBy: { id: 'asc' }
+        });
+    } catch (error) {
+        console.error('Error fetching projects:', error);
+        return [];
+    }
 }
 
 export async function addProject(input: ProjectInput) {

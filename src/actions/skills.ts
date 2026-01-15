@@ -3,7 +3,12 @@
 import { prisma } from '@/lib/prisma';
 
 export async function getSkills() {
-    return await prisma.skill.findMany({
-        orderBy: { id: 'asc' }
-    });
+    try {
+        return await prisma.skill.findMany({
+            orderBy: { category: 'asc' }
+        });
+    } catch (error) {
+        console.error('Error fetching skills:', error);
+        return [];
+    }
 }

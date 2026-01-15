@@ -3,7 +3,12 @@
 import { prisma } from '@/lib/prisma';
 
 export async function getExperience() {
-    return await prisma.experience.findMany({
-        orderBy: { id: 'desc' } // Newest first
-    });
+    try {
+        return await prisma.experience.findMany({
+            orderBy: { year: 'desc' }
+        });
+    } catch (error) {
+        console.error('Error fetching experience:', error);
+        return [];
+    }
 }

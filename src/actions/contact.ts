@@ -3,11 +3,21 @@
 import { prisma } from '@/lib/prisma';
 
 export async function getContact() {
-    const contact = await prisma.contact.findFirst();
-    return contact || {
-        heading: "Let's Create Together",
-        text: "Have a project in mind?",
-        email: "hello@example.com",
-        socials: []
-    };
+    try {
+        const contact = await prisma.contact.findFirst();
+        return contact || {
+            heading: "Get In Touch",
+            text: "Let's work together",
+            email: "hello@example.com",
+            socials: []
+        };
+    } catch (error) {
+        console.error('Error fetching contact:', error);
+        return {
+            heading: "Get In Touch",
+            text: "Let's work together",
+            email: "hello@example.com",
+            socials: []
+        };
+    }
 }

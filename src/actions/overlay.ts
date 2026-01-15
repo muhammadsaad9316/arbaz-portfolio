@@ -5,9 +5,36 @@ import { OverlayContent } from '@/types';
 import { prisma } from '@/lib/prisma';
 
 export async function getOverlayContent(): Promise<OverlayContent> {
-    const result = await prisma.overlayContent.findFirst();
+    try {
+        const result = await prisma.overlayContent.findFirst();
 
-    if (!result) {
+        if (!result) {
+            return {
+                introTitle1: 'Hello',
+                introTitle2: 'World',
+                introRole: 'Developer',
+                craftPrefix: 'I craft',
+                craftHighlight: 'digital experiences',
+                craftSuffix: 'that inspire',
+                visionPrefix: 'Building',
+                visionHighlight: 'tomorrow',
+                visionSuffix: 'today',
+            };
+        }
+
+        return {
+            introTitle1: result.introTitle1,
+            introTitle2: result.introTitle2,
+            introRole: result.introRole,
+            craftPrefix: result.craftPrefix,
+            craftHighlight: result.craftHighlight,
+            craftSuffix: result.craftSuffix,
+            visionPrefix: result.visionPrefix,
+            visionHighlight: result.visionHighlight,
+            visionSuffix: result.visionSuffix,
+        };
+    } catch (error) {
+        console.error('Error fetching overlay content:', error);
         return {
             introTitle1: 'Hello',
             introTitle2: 'World',
@@ -20,18 +47,6 @@ export async function getOverlayContent(): Promise<OverlayContent> {
             visionSuffix: 'today',
         };
     }
-
-    return {
-        introTitle1: result.introTitle1,
-        introTitle2: result.introTitle2,
-        introRole: result.introRole,
-        craftPrefix: result.craftPrefix,
-        craftHighlight: result.craftHighlight,
-        craftSuffix: result.craftSuffix,
-        visionPrefix: result.visionPrefix,
-        visionHighlight: result.visionHighlight,
-        visionSuffix: result.visionSuffix,
-    };
 }
 
 export async function updateOverlayContent(content: OverlayContent) {
